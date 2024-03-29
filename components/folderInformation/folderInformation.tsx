@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
@@ -18,7 +20,8 @@ function FolderInformation({ folderOwners, folderName }: Props) {
         <Image
           src={folderOwners.profileImageSource}
           alt="userImg"
-          className={classes["user_image"]}
+          width={60}
+          height={60}
         />
       ) : (
         <Image

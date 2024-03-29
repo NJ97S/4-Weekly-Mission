@@ -30,7 +30,8 @@ function NavigationBar({ userInfo }: Props) {
                 defaultProfileImage
               }
               alt="user image"
-              className={classes["user_image"]}
+              width={28}
+              height={28}
             />
             <span className={classes["user_email"]}>{userInfo.email}</span>
           </div>
