@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
@@ -43,6 +45,7 @@ function Card({ card, changeLinkDeleteSelect, changeFolderAddSelect }: Props) {
                 ? "card image"
                 : "no card image"
             }
+            fill
           />
         </div>
         <div className={classes["card_information"]}>
