@@ -6,7 +6,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import classes from "./folderMenu.module.css";
 import { Folder } from "@/app/folder/page";
 
-import folderAddButton from "../../assets/folder-add-icon.png";
+import folderAddButton from "@/public/images/folder-add-icon.png";
 
 interface Props {
   folders: Folder[];

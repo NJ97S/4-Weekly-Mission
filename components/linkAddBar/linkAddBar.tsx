@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import classes from "./linkAddBar.module.css";
 
-import linkIcon from "../../assets/link-icon.png";
+import linkIcon from "@/public/images/link-icon.png";
 
 function LinkAddBar() {
   return (

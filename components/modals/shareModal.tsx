@@ -1,12 +1,12 @@
 import React from "react";
+import Image from "next/image";
 
 import classes from "./shareModal.module.css";
 
-import closeIcon from "../../assets/close-icon.svg";
-import kakaotalkIcon from "../../assets/kakaotalk.svg";
-import facebookIcon from "../../assets/facebook.svg";
-import copyLinkIcon from "../../assets/copy-link-icon.svg";
-import Image from "next/image";
+import closeIcon from "@/public/images/close-icon.svg";
+import kakaotalkIcon from "@/public/images/kakaotalk.svg";
+import facebookIcon from "@/public/images/facebook.svg";
+import copyLinkIcon from "@/public/images/copy-link-icon.svg";
 
 interface Props {
   changeFolderShareSelect: () => void;

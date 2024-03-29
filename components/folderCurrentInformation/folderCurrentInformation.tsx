@@ -5,9 +5,9 @@ import Image from "next/image";
 
 import classes from "./folderCurrentInformation.module.css";
 
-import shareIcon from "../../assets/share-icon.png";
-import editIcon from "../../assets/pencil-icon.png";
-import deleteIcon from "../../assets/delete-icon.png";
+import shareIcon from "@/public/images/share-icon.png";
+import editIcon from "@/public/images/pencil-icon.png";
+import deleteIcon from "@/public/images/delete-icon.png";
 
 interface Props {
   folderName: string | undefined;

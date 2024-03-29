@@ -23,7 +23,7 @@ import {
   getUser,
 } from "@/services/api";
 
-import floatingButton from "../assets/folder-add-icon-white.png";
+import floatingButton from "@/public/images/folder-add-icon-white.png";
 
 export interface UserCard {
   id: number;

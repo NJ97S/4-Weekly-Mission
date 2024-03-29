@@ -1,9 +1,9 @@
 import React from "react";
+import Image from "next/image";
 
 import classes from "./deleteModal.module.css";
 
-import closeIcon from "../../assets/close-icon.svg";
-import Image from "next/image";
+import closeIcon from "@/public/images/close-icon.svg";
 
 interface Props {
   title: string;
