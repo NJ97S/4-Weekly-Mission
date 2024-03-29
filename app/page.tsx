@@ -1,8 +1,20 @@
+import Link from "next/link";
+import classes from "./page.module.css";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Welcome to this NextJS Course!</h1>
-      <p>🔥 Let&apos;s get started! 🔥</p>
-    </main>
+    <div className={classes.HomePage}>
+      <p className={classes["information_msg"]}>메인 페이지 추가 예정입니다.</p>
+      <div className={classes["link_container"]}>
+        <Link href="/shared">
+          <button className={classes["link_page_button"]}>
+            Folder Shared Page
+          </button>
+        </Link>
+        <Link href="/folder">
+          <button className={classes["link_page_button"]}>Folder Page</button>
+        </Link>
+      </div>
+    </div>
   );
 }
