@@ -4,7 +4,7 @@ import Image from "next/image";
 import classes from "./folderInformation.module.css";
 import { Owner } from "@/app/shared/page";
 
-import rabbitImg from "../../assets/rabbit-icon.png";
+import rabbitImg from "@/public/images/rabbit-icon.png";
 
 interface Props {
   folderOwners?: Owner;
