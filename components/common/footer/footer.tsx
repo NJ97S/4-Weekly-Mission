@@ -1,10 +1,12 @@
 import React from "react";
-import classes from "./footer.module.css";
-import facebookImg from "../../assets/facebook-icon.png";
-import twitterImg from "../../assets/twitter-icon.png";
-import youtubeImg from "../../assets/youtube-icon.png";
-import instagramImg from "../../assets/instagram-icon.png";
 import Image from "next/image";
+
+import classes from "./footer.module.css";
+
+import facebookImg from "@/public/images/facebook-icon.png";
+import twitterImg from "@/public/images/twitter-icon.png";
+import youtubeImg from "@/public/images/youtube-icon.png";
+import instagramImg from "@/public/images/instagram-icon.png";
 
 function Footer() {
   return (
