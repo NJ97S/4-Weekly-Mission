@@ -1,14 +1,17 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
 import classes from "./navigationBar.module.css";
+import { SampleUser } from "@/app/shared/page";
+import { User } from "@/app/folder/page";
 
-import logoImg from "../../assets/linkbrary-logo.png";
-import { User } from "../../pages/FolderPage";
-import { SampleUser } from "../../pages/FolderSharedPage";
+import logoImg from "@/public/images/linkbrary-logo.png";
+import defaultProfileImage from "@/public/images/rabbit-icon.png";
 
 interface Props {
-  userInfo: User | SampleUser | undefined;
+  userInfo?: User | SampleUser;
 }
 
 function NavigationBar({ userInfo }: Props) {
@@ -21,7 +24,11 @@ function NavigationBar({ userInfo }: Props) {
         {userInfo ? (
           <div className={classes["user_information"]}>
             <Image
-              src={userInfo.profileImageSource || userInfo["image_source"]}
+              src={
+                userInfo.profileImageSource ||
+                userInfo["image_source"] ||
+                defaultProfileImage
+              }
               alt="user image"
               className={classes["user_image"]}
             />
