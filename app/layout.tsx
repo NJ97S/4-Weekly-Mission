@@ -1,3 +1,6 @@
+import "./globals.css";
+import "./reset.css";
+
 export const metadata = {
   title: "Linkbrary",
   description: "링크를 저장해보세요",
