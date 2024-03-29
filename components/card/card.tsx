@@ -9,8 +9,8 @@ import elapsedTime from "@/utils/elapsedTime";
 import CardPopover from "../cardPopover/cardPopover";
 import { SampleCard } from "@/app/shared/page";
 
-import noCardImg from "../../assets/basic-card.png";
-import kebabIcon from "../../assets/kebab-icon.svg";
+import noCardImg from "@/public/images/basic-card.png";
+import kebabIcon from "@/public/images/kebab-icon.svg";
 
 interface Props {
   card: UserCard | SampleCard;
