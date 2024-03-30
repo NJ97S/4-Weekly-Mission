@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
@@ -30,10 +32,11 @@ function DeleteModal({
             src={closeIcon}
             alt="close icon"
             className={classes["close-icon"]}
-            onClick={() => {
-              (isLinkDeleteSelect && changeLinkDeleteSelect) ||
-                (isFolderDeleteSelect && changeFolderDeleteSelect);
-            }}
+            onClick={
+              isLinkDeleteSelect
+                ? changeLinkDeleteSelect
+                : changeFolderDeleteSelect
+            }
           />
           <h1 className={classes.title}>{title}</h1>
           <p className={classes.subtitle}>{description}</p>

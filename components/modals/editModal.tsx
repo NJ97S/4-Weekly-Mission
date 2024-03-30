@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
@@ -30,10 +32,9 @@ function EditModal({
             src={closeIcon}
             alt="close icon"
             className={classes["close-icon"]}
-            onClick={() => {
-              (isFolderAddSelect && changeFolderAddSelect) ||
-                (isFolderEditSelect && changeFolderEditSelect);
-            }}
+            onClick={
+              isFolderAddSelect ? changeFolderAddSelect : changeFolderEditSelect
+            }
           />
           <h1 className={classes.title}>{title}</h1>
           <input
