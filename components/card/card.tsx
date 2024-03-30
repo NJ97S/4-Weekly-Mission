@@ -28,6 +28,10 @@ function Card({ card, changeLinkDeleteSelect, changeFolderAddSelect }: Props) {
     setShowPopover(!showPopover);
   };
 
+  const imageUrl = (card.imageSource || card["image_source"])?.startsWith("//")
+    ? `https:${card.imageSource || card["image_source"]}`
+    : (card.imageSource || card["image_source"]) ?? noCardImg;
+
   return (
     <div className={classes.Card}>
       <a
@@ -39,12 +43,8 @@ function Card({ card, changeLinkDeleteSelect, changeFolderAddSelect }: Props) {
         <div className={classes["card_image_container"]}>
           <Image
             className={classes["card_image"]}
-            src={(card.imageSource || card["image_source"]) ?? noCardImg}
-            alt={
-              card.imageSource || card["image_source"]
-                ? "card image"
-                : "no card image"
-            }
+            src={imageUrl}
+            alt={imageUrl === noCardImg ? "no card image" : "card image"}
             fill
           />
         </div>
