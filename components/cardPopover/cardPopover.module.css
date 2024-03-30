@@ -5,6 +5,10 @@
 }
 
 .CardPopover .each_popover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 7px 12px;
   height: 31px;
   background-color: var(--White);
@@ -12,8 +16,6 @@
   color: #333236;
   font-family: Pretendard;
   font-size: 14px;
-  font-weight: 400;
-  text-align: center;
 }
 
 .CardPopover .each_popover:hover {
