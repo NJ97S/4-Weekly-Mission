@@ -1,5 +1,3 @@
-@import url("/src/common/color.css");
-
 .FolderInformation {
   display: flex;
   flex-direction: column;
