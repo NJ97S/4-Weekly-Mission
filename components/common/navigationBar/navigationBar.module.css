@@ -19,6 +19,10 @@
   gap: 6px;
 }
 
+.NavigationBar .user_image {
+  border-radius: 999px;
+}
+
 .NavigationBar .user_email {
   color: #373740;
   font-family: Pretendard;
