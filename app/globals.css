@@ -9,3 +9,17 @@
   --Gray4: #e7effb;
   --Gray5: #f0f6ff;
 }
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/Pretendard.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Acme";
+  src: url("/fonts/Acme.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
