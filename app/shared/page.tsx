@@ -40,10 +40,11 @@ function FolderSharedPage() {
 
   const getSampleCardsInfo = async () => {
     const sampleCardsInfo = await getSampleCards();
-    const { owner, name, link } = sampleCardsInfo.folder;
+    const { owner, name, links } = sampleCardsInfo.folder;
+    console.log(links);
     setFolderOwners(owner);
     setFolderName(name);
-    setSampleCards(link);
+    setSampleCards(links);
   };
 
   const getSampleUserInfo = async () => {
