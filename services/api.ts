@@ -62,12 +62,12 @@ export async function getCards() {
         result.message || "Failed to fetch user's card information"
       );
   } catch (error) {
-    console.error("Error fetcing user's card information", error);
+    console.error("Error fetching user's card information", error);
     throw error;
   }
 }
 
-export async function getSelectedCards(folderId: number | undefined) {
+export async function getSelectedCards(folderId?: number) {
   try {
     const response = await fetch(
       `${BASE_URL}/api/users/4/links?folderId=${folderId}`
