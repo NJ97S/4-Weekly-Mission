@@ -1,15 +1,14 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 
 import classes from "./card.module.css";
-import { UserCard } from "@/app/folder/page";
-
-import elapsedTime from "@/utils/elapsedTime";
 import CardPopover from "../cardPopover/cardPopover";
+import elapsedTime from "@/utils/elapsedTime";
 import { SampleCard } from "@/app/shared/page";
+import { UserCard } from "@/app/folder/page";
 
 import noCardImg from "@/public/images/basic-card.png";
 import kebabIcon from "@/public/images/kebab-icon.svg";
@@ -67,7 +66,7 @@ function Card({ card, changeLinkDeleteSelect, changeFolderAddSelect }: Props) {
               )}
             </div>
           </div>
-          <div className={classes.description}>{card.description}</div>
+          <div className={classes.description}>{card.title}</div>
           <div className={classes.createdAt}>
             {new Date(
               card.createdAt || card.created_at || 1

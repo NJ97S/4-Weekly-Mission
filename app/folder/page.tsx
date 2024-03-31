@@ -31,7 +31,7 @@ export interface UserCard {
   createdAt?: string;
   updated_at?: string;
   url: string;
-  description: string;
+  title: string;
   image_source?: string;
   imageSource?: string;
   folder_id: number;
