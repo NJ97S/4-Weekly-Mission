@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.profileImg {
+  border-radius: 999px;
+}
+
+.user_email {
+  color: var(--Gray-100);
+  font-family: "Pretendard";
+  font-size: 0.875rem;
+}

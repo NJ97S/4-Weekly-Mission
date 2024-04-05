@@ -1,0 +1,10 @@
+.link_image {
+  object-fit: cover;
+  transition: all 0.2s linear;
+  transform: scale(1);
+}
+
+.link_image:hover {
+  transition: all 0.2s linear;
+  transform: scale(1.3);
+}

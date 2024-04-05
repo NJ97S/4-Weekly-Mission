@@ -1,40 +1,37 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 
 import classes from "./cards.module.css";
 import Card from "../card/card";
-import { UserCard } from "@/app/folder/page";
+import { getSampleFolderData } from "@/services/api";
 
-interface Props {
-  cards: UserCard[];
-  changeLinkDeleteSelect?: () => void;
-  changeFolderAddSelect?: () => void;
+export interface LinkData {
+  id: number;
+  createdAt: string;
+  url: string;
+  title: string;
+  description: string;
+  imageSource: string;
 }
 
-function Cards({
-  cards,
-  changeLinkDeleteSelect,
-  changeFolderAddSelect,
-}: Props) {
+export default function Cards() {
+  const [sampleLink, setSampleLink] = useState<LinkData[]>([]);
+
+  async function getSampleLinkInfo() {
+    const data = await getSampleFolderData();
+    setSampleLink(data.folder.links);
+  }
+
+  useEffect(() => {
+    getSampleLinkInfo();
+  }, []);
+
   return (
-    <div className={classes.Cards}>
-      <div className={classes.container}>
-        {cards ? (
-          cards.map((card) => (
-            <Card
-              key={card.id}
-              card={card}
-              changeLinkDeleteSelect={changeLinkDeleteSelect}
-              changeFolderAddSelect={changeFolderAddSelect}
-            />
-          ))
-        ) : (
-          <p className={classes["no_link_msg"]}>저장된 링크가 없습니다.</p>
-        )}
-      </div>
+    <div className={classes["cards_container"]}>
+      {sampleLink.map((link) => (
+        <Card key={link.id} link={link} />
+      ))}
     </div>
   );
 }
-
-export default Cards;

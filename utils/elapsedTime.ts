@@ -1,9 +1,5 @@
-import { UserCard } from "../pages/FolderPage";
-
-const elapsedTime = (card: UserCard) => {
-  const createdTime = new Date(
-    card.createdAt || card.created_at || 1
-  ).getTime();
+export default function getElapsedTime(createdDate: string) {
+  const createdTime = new Date(createdDate).getTime();
   const currentTime = new Date().getTime();
   const timeDiff = Math.floor((currentTime - createdTime) / 1000 / 60);
 
@@ -15,6 +11,4 @@ const elapsedTime = (card: UserCard) => {
   else if (timeDiff < 60 * 24 * 365)
     return `${Math.floor(timeDiff / 30 / 24 / 60)} months ago`;
   else return `${Math.floor(timeDiff / 30 / 24 / 60 / 12)} years ago`;
-};
-
-export default elapsedTime;
+}

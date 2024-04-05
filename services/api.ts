@@ -1,85 +1,24 @@
-const BASE_URL = "https://bootcamp-api.codeit.kr";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 
-export async function getSampleCards() {
+async function getData(path: string) {
   try {
-    const response = await fetch(`${BASE_URL}/api/sample/folder`);
-    const result = await response.json();
-    if (response.ok) return result;
-    else throw new Error(result.message || "Failed to fetch sample cards");
+    const response = await fetch(BASE_URL + path);
+    if (response.ok) {
+      const result = await response.json();
+      return result;
+    } else {
+      throw new Error(`API returned status ${response.status}`);
+    }
   } catch (error) {
-    console.error("Error fetching sample cards", error);
+    console.error("Error fetching data", error);
     throw error;
   }
 }
 
-export async function getSampleUser() {
-  try {
-    const response = await fetch(`${BASE_URL}/api/sample/user`);
-    const result = await response.json();
-    if (response.ok) return result;
-    else
-      throw new Error(
-        result.message || "Failed to fetch sample user information"
-      );
-  } catch (error) {
-    console.error("Error fetching sample user information", error);
-    throw error;
-  }
+export function getSampleUserData() {
+  return getData("/api/sample/user");
 }
 
-export async function getUser() {
-  try {
-    const response = await fetch(`${BASE_URL}/api/users/4`);
-    const result = await response.json();
-    if (response.ok) return result;
-    else throw new Error(result.message || "Failed to fetch user information");
-  } catch (error) {
-    console.error("Error fetching user information", error);
-    throw error;
-  }
-}
-
-export async function getFolders() {
-  try {
-    const response = await fetch(`${BASE_URL}/api/users/4/folders`);
-    const result = await response.json();
-    if (response.ok) return result;
-    else
-      throw new Error(result.message || "Failed to fetch folder information");
-  } catch (error) {
-    console.error("Error fetching folder information", error);
-    throw error;
-  }
-}
-
-export async function getCards() {
-  try {
-    const response = await fetch(`${BASE_URL}/api/users/4/links`);
-    const result = await response.json();
-    if (response.ok) return result;
-    else
-      throw new Error(
-        result.message || "Failed to fetch user's card information"
-      );
-  } catch (error) {
-    console.error("Error fetching user's card information", error);
-    throw error;
-  }
-}
-
-export async function getSelectedCards(folderId?: number) {
-  try {
-    const response = await fetch(
-      `${BASE_URL}/api/users/4/links?folderId=${folderId}`
-    );
-    const result = await response.json();
-    if (response.ok) return result;
-    else
-      throw new Error(
-        result.message || "Failed to fetch selected folder's card information"
-      );
-  } catch (error) {
-    console.error("Error fetching selected folder's card information", error);
-    throw error;
-  }
+export function getSampleFolderData() {
+  return getData("/api/sample/folder");
 }

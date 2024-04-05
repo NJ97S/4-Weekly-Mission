@@ -1,5 +1,64 @@
-.FolderSharedPage .content_container {
+.header {
+  background-color: var(--Gray-bg);
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2.0625rem;
+  padding-bottom: 2rem;
+}
+
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.banner {
+  background-color: var(--Gray-bg);
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  padding-top: 1.25rem;
+  padding-bottom: 3.75rem;
+}
+
+.content_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  width: fit-content;
+
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer {
+  position: relative;
+  background-color: #111322;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 6.5rem 4rem;
+  height: 10rem;
+  margin-top: 3.75rem;
+}
+
+@media (max-width: 1199px) {
+  .header,
+  .banner,
+  .content_container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
