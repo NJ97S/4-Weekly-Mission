@@ -1,24 +1,28 @@
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
+import apiClient from "@/lib/axios";
 
-async function getData(path: string) {
+export async function getSampleUserData() {
   try {
-    const response = await fetch(BASE_URL + path);
-    if (response.ok) {
-      const result = await response.json();
-      return result;
-    } else {
-      throw new Error(`API returned status ${response.status}`);
-    }
+    const response = await apiClient.get("/api/sample/user");
+    return response.data;
   } catch (error) {
-    console.error("Error fetching data", error);
-    throw error;
+    throw new Error("유저 정보를 불러올 수 없습니다.");
   }
 }
 
-export function getSampleUserData() {
-  return getData("/api/sample/user");
+export async function getSampleFolderData() {
+  try {
+    const response = await apiClient.get("/api/sample/folder");
+    return response.data;
+  } catch (error) {
+    throw new Error("폴더 정보를 불러올 수 없습니다.");
+  }
 }
 
-export function getSampleFolderData() {
-  return getData("/api/sample/folder");
+export async function postSigninValidation(body: object) {
+  try {
+    const response = await apiClient.post("/api/sign-in", body);
+    return response.data;
+  } catch (error) {
+    throw new Error("회원 정보를 확인하는 데 실패했습니다.");
+  }
 }

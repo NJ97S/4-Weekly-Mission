@@ -1,0 +1,18 @@
+.basic_align {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--Gray-bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 25rem;
+}
+
+.sns_container {
+  margin-top: 2rem;
+}
