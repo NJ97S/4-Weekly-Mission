@@ -26,3 +26,12 @@ export async function postSigninValidation(body: object) {
     throw new Error("회원 정보를 확인하는 데 실패했습니다.");
   }
 }
+
+export async function postSignupValidation(body: object) {
+  try {
+    const response = await apiClient.post("/api/sign-up", body);
+    return response.data;
+  } catch (error) {
+    throw new Error("회원 가입을 요청하는 데 실패했습니다.");
+  }
+}

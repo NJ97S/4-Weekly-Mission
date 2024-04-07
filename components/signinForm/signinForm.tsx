@@ -39,6 +39,7 @@ export default function SigninForm() {
           label="이메일"
           type="text"
           errorMessage={errors.email?.message}
+          placeholder="이메일을 입력해주세요."
           {...register("email", {
             required: "이메일을 입력해주세요.",
             pattern: {
@@ -51,6 +52,7 @@ export default function SigninForm() {
           label="비밀번호"
           type="password"
           errorMessage={errors.password?.message}
+          placeholder="비밀번호를 입력해주세요."
           {...register("password", { required: "비밀번호를 입력해주세요." })}
         />
       </div>

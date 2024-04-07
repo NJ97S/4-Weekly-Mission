@@ -8,7 +8,9 @@ export default function Signin() {
   return (
     <div className={classes["basic_align"]}>
       <div className={classes.container}>
-        <SignHeader path="/signup">회원 가입하기</SignHeader>
+        <SignHeader linkName="회원 가입하기" path="/signup">
+          회원이 아니신가요?
+        </SignHeader>
         <SigninForm />
         <div className={classes["sns_container"]}>
           <SignOAuth>소셜 로그인</SignOAuth>

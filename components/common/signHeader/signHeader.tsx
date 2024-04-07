@@ -6,11 +6,12 @@ import classes from "./signHeader.module.css";
 import mainLogo from "@/public/images/linkbrary-logo.svg";
 
 interface Props {
+  linkName: string;
   path: string;
   children: string;
 }
 
-export default function SignHeader({ path, children }: Props) {
+export default function SignHeader({ linkName, path, children }: Props) {
   return (
     <div className={classes.header}>
       <Image
@@ -21,9 +22,9 @@ export default function SignHeader({ path, children }: Props) {
         priority
       />
       <p className={classes["signup_container"]}>
-        회원이 아니신가요?
+        {children}
         <Link href={path} className={classes["signup_link"]}>
-          {children}
+          {linkName}
         </Link>
       </p>
     </div>

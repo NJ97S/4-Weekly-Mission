@@ -1,5 +1,5 @@
 .basic_align {
-  width: 100%;
+  width: 100%; /* 100vw로 지정하면 가로스크롤 생기는 이유? */
   min-height: 100vh;
 
   padding: 3.125rem 0;
