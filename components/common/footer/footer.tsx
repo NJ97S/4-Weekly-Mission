@@ -1,53 +1,32 @@
-import React from "react";
 import Image from "next/image";
 
 import classes from "./footer.module.css";
 
-import facebookImg from "@/public/images/facebook-icon.png";
-import twitterImg from "@/public/images/twitter-icon.png";
-import youtubeImg from "@/public/images/youtube-icon.png";
-import instagramImg from "@/public/images/instagram-icon.png";
+import facebook from "@/public/images/facebook-icon.svg";
+import twitter from "@/public/images/twitter-icon.svg";
+import youtube from "@/public/images/youtube-icon.svg";
+import instagram from "@/public/images/instagram-icon.svg";
 
-function Footer() {
+const SNS_ICON = [
+  { title: "facebook", src: facebook },
+  { title: "twitter", src: twitter },
+  { title: "youtube", src: youtube },
+  { title: "instagram", src: instagram },
+];
+
+export default function Footer() {
   return (
-    <div className={classes.Footer}>
-      <div className={classes.copyright}>©codeit - 2023</div>
-      <div className={classes.policy}>
-        <a href="#">Privacy Policy</a>
-        <a href="#">FAQ</a>
+    <div className={classes.container}>
+      <p className={classes["only_mobile"]}>@codeit - 2023</p>
+      <div className={classes["policy_container"]}>
+        <p>Privacy Policy</p>
+        <p>FAQ</p>
       </div>
-      <div className={classes.sns}>
-        <a
-          href="http://www.facebook.com"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <Image src={facebookImg} alt="facebook" />
-        </a>
-        <a
-          href="http://www.twitter.com"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <Image src={twitterImg} alt="twitter" />
-        </a>
-        <a
-          href="http://www.youtube.com"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <Image src={youtubeImg} alt="youtube" />
-        </a>
-        <a
-          href="http://www.instagram.com"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <Image src={instagramImg} alt="instagram" />
-        </a>
+      <div className={classes["sns_container"]}>
+        {SNS_ICON.map((sns) => (
+          <Image key={sns.title} src={sns.src} alt={sns.title} />
+        ))}
       </div>
     </div>
   );
 }
-
-export default Footer;

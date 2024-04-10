@@ -1,81 +1,30 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
-import { useState } from "react";
-
 import classes from "./card.module.css";
-import CardPopover from "../cardPopover/cardPopover";
-import elapsedTime from "@/utils/elapsedTime";
-import { SampleCard } from "@/app/shared/page";
-import { UserCard } from "@/app/folder/page";
-
-import noCardImg from "@/public/images/basic-card.png";
-import kebabIcon from "@/public/images/kebab-icon.svg";
+import CardImage from "./cardImage";
+import getElapsedTime from "@/utils/elapsedTime";
+import { LinkData } from "../cards/cards";
+import Link from "next/link";
 
 interface Props {
-  card: UserCard | SampleCard;
-  changeLinkDeleteSelect?: () => void;
-  changeFolderAddSelect?: () => void;
+  link: LinkData;
 }
 
-function Card({ card, changeLinkDeleteSelect, changeFolderAddSelect }: Props) {
-  const [showPopover, setShowPopover] = useState(false);
-
-  const handleKebabClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowPopover(!showPopover);
-  };
-
-  const imageUrl = (card.imageSource || card["image_source"])?.startsWith("//")
-    ? `https:${card.imageSource || card["image_source"]}`
-    : (card.imageSource || card["image_source"]) ?? noCardImg;
-
+export default function Card({ link }: Props) {
   return (
-    <div className={classes.Card}>
-      <a
-        href={card.url}
-        target="_blank"
-        rel="noreferrer noopener"
-        className={classes.card}
-      >
-        <div className={classes["card_image_container"]}>
-          <Image
-            className={classes["card_image"]}
-            src={imageUrl}
-            alt={imageUrl === noCardImg ? "no card image" : "card image"}
-            fill
-          />
+    <Link href={link.url} target="_blank" className={classes.link}>
+      <div className={classes.card}>
+        <div className={classes["image_container"]}>
+          <CardImage link={link} />
         </div>
-        <div className={classes["card_information"]}>
-          <div className={classes["card_menu_container"]}>
-            <div className={classes.createdAt}>{elapsedTime(card)}</div>
-            <div className={classes["kebab_container"]}>
-              <Image
-                src={kebabIcon}
-                alt="kebab icon"
-                onClick={handleKebabClick}
-              />
-              {showPopover && (
-                <div className={classes["popover_container"]}>
-                  <CardPopover
-                    changeLinkDeleteSelect={changeLinkDeleteSelect}
-                    changeFolderAddSelect={changeFolderAddSelect}
-                  />
-                </div>
-              )}
-            </div>
+        <div className={classes["info_container"]}>
+          <div className={classes["elapsed_time"]}>
+            {getElapsedTime(link.createdAt)}
           </div>
-          <div className={classes.description}>{card.title}</div>
-          <div className={classes.createdAt}>
-            {new Date(
-              card.createdAt || card.created_at || 1
-            ).toLocaleDateString()}
+          <div className={classes["link_description"]}>{link.description}</div>
+          <div className={classes["creating_date"]}>
+            {new Date(link.createdAt).toLocaleDateString()}
           </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </Link>
   );
 }
-
-export default Card;

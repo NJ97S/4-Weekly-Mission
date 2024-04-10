@@ -1,0 +1,20 @@
+.basic_align {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 3.125rem 0;
+
+  background-color: var(--Gray-bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 25rem;
+}
+
+.sns_container {
+  margin-top: 2rem;
+}

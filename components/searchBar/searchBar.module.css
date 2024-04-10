@@ -1,0 +1,20 @@
+.search_box {
+  width: 100%;
+  max-width: 66.25rem;
+  padding: 0.9375rem 1rem;
+
+  border-radius: 10px;
+  background-color: #f5f5f5;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #f5f5f5;
+}

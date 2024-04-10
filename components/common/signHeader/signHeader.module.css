@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signup_container {
+  font-family: "Pretendard";
+  line-height: 1.5rem;
+}
+
+.signup_link {
+  margin-left: 0.5rem;
+  color: var(--Primary);
+  font-weight: 600;
+}
